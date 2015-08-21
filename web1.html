@@ -1,0 +1,215 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<style>
+	body{
+	left: 0;
+	top: 0;
+	font-family: cursive; ;
+	}
+
+	.resume{
+	color: white;
+	font-size: 20px;
+	left: 0;
+	margin-top: 5vw;
+	margin-left: 10vw;
+	margin-right: 10vw;
+	background-color: blue ;
+	padding: 60px;
+	 box-shadow: 10px 10px 5px #888888;
+	border: 2px solid;
+        border-radius: 25px;
+	}
+
+	.speech{
+	color: white;
+	background-color: orange;
+	position: absolute;
+	top: 14vw;
+	left: 60vw;
+	padding: 10px;
+	border-radius: 12px;
+	text-align: center;
+	}
+
+	.im {
+	position:absolute;
+	top:260px;
+	left: 920px;
+	width:150px;
+
+
+	}
+	.speech:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: 38px;
+	bottom: -20px;
+	border: 15px solid;
+	border-color: #000 #000 transparent transparent;
+	}
+
+	.cvtitle{
+	font-size: 40px;
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 5px red;
+	}
+
+	.button{
+	background-color: #dddddd;
+	border: none;
+	border-radius: 2px;
+	padding: 10px;
+    background: -webkit-linear-gradient(top, rgba(180,180,180,1), rgba(55,55,55,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom, rgba(180,180,180,1), rgba(55,55,55,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom, rgba(180,180,180,1), rgba(55,55,55,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, rgba(180,180,180,1), white); /* Standard syntax */
+	-webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.75);
+	}
+
+	.button:hover{
+	background: none;
+	background-color: #4285F4;
+	color: white;
+	}
+	#grad {
+	  background: -webkit-linear-gradient(red, blue); /* For Safari 5.1 to 6.0 */
+	  background: -o-linear-gradient(red, blue); /* For Opera 11.1 to 12.0 */
+	  background: -moz-linear-gradient(red, blue); /* For Firefox 3.6 to 15 */
+	  background: linear-gradient(red, blue); /* Standard syntax */
+	}
+#grad1 {
+      height: 200px;
+    background: -webkit-linear-gradient(#329691, grey, black); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#329691, grey, black; /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#329691, grey, black); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#329691, grey, black); /* Standard syntax (must be last) */
+}
+
+
+
+	.button:hover{
+	background: none;
+	background-color: #4285F4;
+	color: white;
+	}
+</style>
+
+<script>
+
+	 function change(lnk,evt)
+    {
+        if(evt.type == "mouseover")
+        {
+            lnk.style.color = "red";
+            lnk.style.fontSize = "40";
+        }
+        else if(evt.type == "mouseout")
+        {
+            lnk.style.color = "blue";
+            lnk.style.fontSize = "20";
+        }
+    }
+	var opacity = 0;
+	var coef = 1;
+
+	function fitsAttack(){
+	setInterval('animate();', 50);
+	}
+
+	function animate(){
+	if (opacity<=-0.5)
+		coef = 1;
+	else if (opacity>=1.5)
+		coef=-1;
+
+	opacity=opacity+coef*0.05;
+	if (opacity>=1)
+		target = 1;
+	else if (opacity<=0)
+		target = 0;
+	else
+		target = opacity;
+	//alert("opacity:"+opacity);
+	document.body.style.backgroundColor = 'rgba(50,50,50,'+target+')';
+	}
+</script>
+
+<head>
+	<title>Rahul Mahadev</title>
+</head>
+
+<body onload="fitsAttack()">
+	<div class="resume">
+		<div class="cvtitle">
+			<marquee>Rahul Mahadev</marquee>
+
+		</div>
+		<p>
+		My resume:
+		<br><br>
+		<img src="https://upload.wikimedia.org/wikipedia/en/1/13/Stick_figure.png" alt="USER" class="im" >
+		<input class="button" type="submit" value="GitHub">
+		<br><br>
+		<br><br>
+		<span style="font-size:32pt" onmouseover="this.style.fontSize='36pt'" onmouseout="this.style.fontSize='32pt'">About me:</span>
+	<br>	<div id="grad">
+
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue nec tortor ac elementum. Integer metus erat, rutrum sed nisl vitae, pellentesque feugiat dolor. Ut ante orci, vehicula sit amet blandit et, tempus ac purus. Nulla tempus eget odio id tempus. Nullam sit amet erat turpis. In turpis ligula, egestas vitae erat nec, luctus eleifend libero. Sed vitae eros nulla. Nullam euismod faucibus nisl, a pharetra felis euismod ac. Donec nec nulla velit. Aliquam erat volutpat. Duis at nunc facilisis, mollis massa non, vulputate neque. Ut vel quam tristique, aliquam nulla vestibulum, auctor dui. Sed interdum erat a blandit porta. <br>
+
+	</div>
+<br>
+
+CGPA TABLE:
+<br>
+		<table border=1>
+			<tr>
+				<td></td>
+				<td>SGPA</td>
+							</tr>
+			<tr>
+				<td>1ST sem</td>
+				<td>8.6</td>
+			</tr>
+			<tr>
+				<td>2ND sem</td>
+				<td>8.2</td>
+			</tr>
+			<tr>
+				<td>3rd sem</td>
+				<td>8.6</td>
+			</tr>
+			<tr>
+				<td>4th sem</td>
+				<td>8.9</td>
+			</tr>
+			<tr>
+				<td>5th sem</td>
+				<td>9.16</td>
+			</tr>
+			<tr>
+				<td>6th sem</td>
+				<td>9.4</td>
+			</tr>
+		</table>
+		</p>
+	</div>
+
+	<div class="speech" >
+	"Welcome to my resume"
+	</div>
+
+</body>
+
+</html>

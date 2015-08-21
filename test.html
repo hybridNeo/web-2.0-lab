@@ -1,0 +1,160 @@
+Google logo Drive
+ISE - 7A › ... › Lab programs
+1 item
+HTML
+Lab1.html
+Lab1.html
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<style>
+	body{
+	left: 0;
+	top: 0;
+	background-color: white;
+	background-color: rgba(103,183,163,0);
+	font-family: calibri;
+	}
+
+	.resume{
+	color: white;
+	font-size: 20px;
+	left: 0;
+	margin-top: 5vw;
+	margin-left: 10vw;
+	margin-right: 10vw;
+	background-color: #67B7A3;
+	padding: 60px;
+	}
+
+	.speech{
+	color: white;
+	background-color: black;
+	position: absolute;
+	top: 2vw;
+	left: 2vw;
+	padding: 10px;
+	border-radius: 12px;
+	text-align: center;
+	}
+
+	.speech:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: 38px;
+	bottom: -20px;
+	border: 15px solid;
+	border-color: #000 #000 transparent transparent;
+	}
+
+	.cvtitle{
+	font-size: 40px;
+	text-align: center;
+	color: white;
+	}
+
+	.button{
+	background-color: #dddddd;
+	border: none;
+	border-radius: 2px;
+	padding: 10px;
+	background: -webkit-linear-gradient(top, rgba(180,180,180,1), rgba(55,55,55,1)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom, rgba(180,180,180,1), rgba(55,55,55,1)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom, rgba(180,180,180,1), rgba(55,55,55,1)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom, rgba(180,180,180,1), white); /* Standard syntax */
+	-webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.75);
+	}
+
+	.button:hover{
+	background: none;
+	background-color: #4285F4;
+	color: white;
+	}
+
+	.button:hover{
+	background: none;
+	background-color: #4285F4;
+	color: white;
+	}
+</style>
+
+<script>
+	var opacity = 0;
+	var coef = 1;
+
+	function fitsAttack(){
+	setInterval('animate();', 50);
+	}
+
+	function animate(){
+	if (opacity<=-0.5)
+		coef = 1;
+	else if (opacity>=1.5)
+		coef=-1;
+
+	opacity=opacity+coef*0.05;
+	if (opacity>=1)
+		target = 1;
+	else if (opacity<=0)
+		target = 0;
+	else
+		target = opacity;
+	//alert("opacity:"+opacity);
+	document.body.style.backgroundColor = 'rgba(103,183,163,'+target+')';
+	}
+</script>
+
+<head>
+	<title>A really meaningful CV</title>
+</head>
+
+<body onload="fitsAttack()">
+	<div class="resume">
+		<div class="cvtitle">
+			ANONYMOUS RESUME
+		</div>
+		<p>
+		Hi. Here goes all the information about your life every interviewer doesn't want to know about. Also, miraculously, here go all those links, tables and buttons that the interviewer can't wait to see!
+		<br><br>
+		<input class="button" type="submit" value="Click here to waste time">
+		<br><br>
+		Here's my sole mentor: <a href="https://www.google.com">Omniscient masterpiece</a>
+		<br><br>
+		Another rather helpful table about my productivity:<br>
+		<table border=1>
+			<tr>
+				<td></td>
+				<td>Lot of free time</td>
+				<td>No free time</td>
+			</tr>
+			<tr>
+				<td>Really jobless</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Very busy</td>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+		</table>
+		</p>
+	</div>
+
+	<div class="speech">
+	"These kind of resumes really
+	<br>appeal to me!"
+	<br>- Every interviewer ever.
+	</div>
+</body>
+
+</html>

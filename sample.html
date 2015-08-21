@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+#sidetitle {
+    line-height:20px;
+    background-color:#eeeeee;
+    height:700px;
+    width:200px;
+    float:left;
+    padding:5px;
+    background-color:gray;	      
+}
+#navbar{
+  background-color: red;
+}
+#section {
+    width:450px;
+    float:left;
+    padding:10px;	 	 
+}
+
+</style>
+</head>
+
+<script>
+function drawRect(){
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.clearRect(0, 0, 280, 190);
+base_image = new Image();
+  	base_image.src = 'rect.png';
+  	base_image.onload = function(){
+    		ctx.drawImage(base_image, 0, 0,250,200);
+  	}
+}
+
+function drawCone(){
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.clearRect(0, 0, 280, 190);
+base_image = new Image();
+  	base_image.src = 'cone.png';
+  	base_image.onload = function(){
+    		ctx.drawImage(base_image, 0, 0,150,150);
+  	}
+}
+
+function drawHappy(){
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.clearRect(0, 0, 280, 190);
+base_image = new Image();
+  	base_image.src = 'happy.png';
+  	base_image.onload = function(){
+    		ctx.drawImage(base_image, 0, 0,150,150);
+  	}
+}
+
+function drawSad(){
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.clearRect(0, 0, 280, 190);
+base_image = new Image();
+  	base_image.src = 'sad.png';
+  	base_image.onload = function(){
+    		ctx.drawImage(base_image, 0, 0,150,150);
+  	}
+}
+
+</script>
+
+
+<body>
+
+<center><header>
+<h1> The Times Of Mirror </h1>
+<h3> Friday 21<sup>st</sup> August 2025</h3>
+<div id="navbar">
+<hr>
+
+<nav id="navbar">
+  <a href="/css/">Sports</a> |
+  <a href="/js/">Fashion</a> |
+  <a href="/jquery/">International</a> |
+  <a href="/html/">National</a> |
+  
+</nav id="navbar">
+<hr>
+</header id="navbar">
+</center>
+</div>
+<div id="sidetitle">
+<p>
+<h3>Samsung Galaxy S10</h3>
+  
+  Introducing Samsung Galaxy S10 with all new Clear Glass Display, Expect the Unexpected.
+  <br>
+  <img height="200px" width="200px" src="http://i1.wp.com/cdn.bgr.com/2015/03/bgr-samsung-galaxy-s6-2.jpg?w=625" >
+
+</p>
+<p>
+  <h3>Britannia biscuits</h3>
+    The new Britannia biscuits buy one get 2 free
+  <img height="200px" width="200px" src="http://www.hypercityindia.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/b/r/britannia_good_day_cashew_biscuit_162g.jpg">
+</p>
+</div>
+<div id="section">
+<section>
+<article>
+<h2>National</h2>
+<p>
+
+Prime Minister Narendra Modi delivers speech in Mars, the first ever for an Indian, encourages NRI's to come to India
+</p>
+</article>
+<iframe width="250" height="180"
+src="https://www.youtube.com/watch?v=YIquiDA0s64">
+</iframe>
+
+</section>
+</div>
+<div id = "section">
+<h2>Sports</h2>
+<section>
+<article>
+<p>
+Manchester City Sign Adam Sterling for $200 million making him the most expensive player,
+</p>
+<p>
+Wesley Sneijder and Nicolas Gaitan are close to Manchester United move.
+</p>
+</article>
+</section>
+</div>
+<div id = "section">
+<h2>International</h2>
+<p>
+UK to test new air freshner which can charge mobile phones. THis is going to be tested in the London olympics.
+</p>
+<p>
+  Elections in USA to be held later this year.
+</p>
+</article>
+<canvas id="myCanvas" width="280" height="190" style="border:1px solid #000000;">
+</canvas>
+<button type="button" id = "rect" onclick="drawRect()">Rectangle</button>
+<button type="button" id = "cone" onclick="drawCone()">Cone</button>
+<button type="button" id = "happy" onclick="drawHappy()">Happy</button>
+<button type="button" id = "sad" onclick="drawSad()">Sad</button>
+</section>
+</div>
+
+</body>
+<center>
+<footer style = "clear:both">
+Copyright &copy NEWS<br>
+<form action="form.php">
+  Name:
+  <input type="email" name="email">
+  Feedback:
+  <input type="url" name="homepage">
+  <input type="submit">
+</form>
+</footer>
+</center>
+</html>
+
