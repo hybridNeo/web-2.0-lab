@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <style>
+      #output ,#subResponse{
+        color:red;
+      }
+    </style>
+    <title> Enter Student details </title>
+  <script type="text/javascript">
+      function submit(){
+        document.getElementById('subResponse').innerHTML = "Saved to server!!!";
+      }
+      function foo(){
+        var usn = document.getElementById('usn').value;
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+          {// code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+          }
+        else
+          {// code for IE6, IE5
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange=function()
+          {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                if(xmlhttp.responseText != '-1'){
+                  document.getElementById('output').innerHTML = 'VALID';
+                  document.getElementById('output').style.color = "green";
+
+                  arr = xmlhttp.responseText.split(';');
+                  document.getElementById("name").value= arr[0];
+                  document.getElementById("subject").value= arr[1];
+                  document.getElementById("gpa").value= arr[2];
+                  document.getElementById("hobbies").value= arr[3];
+                }
+                else{
+                  document.getElementById('output').style.color = "red";
+                  document.getElementById('output').innerHTML = 'INVALID USN';
+                }
+            }
+          }
+          xmlhttp.open("GET","/validate.php?usn="+usn,true);
+          xmlhttp.send();
+      }
+  </script>
+  </head>
+  <body bgcolor="peachpuff">
+
+  <center>
+      <h1>Enter Your details</h1>
+  <table padding="100px" border="0px">
+    <th>
+    </th>
+    <tr>
+      <td>Enter USN </td>
+      <td><input type="text" id="usn" onblur="foo()"></td>
+      <td id="output"></td>
+    </tr>
+    <tr>
+      <td>Enter Name </td>
+      <td><input type="text" id="name" ></td>
+    </tr>
+    <tr>
+      <td>Enter Subject </td>
+      <td><input type="text" id="subject" ></td>
+    </tr>
+    <tr>
+      <td>CGPA </td>
+      <td><input type="text" id="gpa" ></td>
+    </tr>
+    <tr>
+      <td>Hobbies </td>
+      <td><input type="text" id="hobbies" ></td>
+    </tr>
+    <tr>
+      <td>Submit </td>
+      <td><input type="button" id="submit" value="Click Here" onclick="submit()"></td>
+      <td id="subResponse" ></td>
+    </tr>
+  </table>
+</center>
+</body>
+</html>
