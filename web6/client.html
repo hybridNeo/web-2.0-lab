@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<script>
+			function init(){
+				foo();
+				setInterval(foo,1000);
+			}
+			function foo(){
+				xhr = new XMLHttpRequest();
+				xhr.open("GET","db.php",true);
+				xhr.onreadystatechange = function(){
+					if(xhr.status == 200 && xhr.readyState == 4){
+						var text= xhr.responseText;
+						var arr = text.split(";");
+						document.getElementById("out").innerHTML = "PESIT:CSE "+arr[0]+", PESIT:ECE "+arr[1]+", RV:CSE "+arr[2]+ ", RV:ECE "+arr[3]; 
+					}
+				}
+				xhr.send();
+				
+			}
+			function submit(){
+				var col = document.getElementById("college").value;
+				var dept = document.getElementById("dept").value;
+						xhr = new XMLHttpRequest();
+
+				xhr.open("GET","db.php?col="+col+"&dept="+dept,true);
+				xhr.onreadystatechange = function(){
+					if(xhr.status == 200 && xhr.readyState == 4){
+						var text= xhr.responseText;
+						var arr = text.split(";");
+						document.getElementById("out").innerHTML = "PESIT:CSE "+arr[0]+", PESIT:ECE "+arr[1]+", RV:CSE "+arr[2]+ ", RV:ECE "+arr[3]; 
+					}
+				}
+				xhr.send();
+			}
+		</script>
+	
+	</head>
+	
+	<body onload="init()">
+		<center><h2 id="out" style="color:green">Here goes the values</h2></center>
+		<h3>Make your choice</h3><hr><br>
+		<label style="color:red" >HALL TKT NUMBER </label><input type="text" id="hall" ><br>
+		<label style="color:red" >COLLEGE:</label>
+		<select id="college">
+			<option>PESIT</option>
+			<option>RVCE</option>
+		</select>
+		<br><label style="color:red" >DEPARTMENT:</label>
+		<select id="dept">
+			<option>CSE</option>
+			<option>ECE</option>
+		</select>
+		<br><br>
+		<input type="button" value="SUBMIT" onclick="submit()">
+
+	</body>
+</html>
